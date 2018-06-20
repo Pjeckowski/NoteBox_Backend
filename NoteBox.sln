@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteBox", "NoteBox\NoteBox.csproj", "{AA3CA414-AA6F-411A-A06E-780FD1AAF681}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01Service", "01Service", "{BFB2F1CE-B1AC-418E-A4E8-13E34B398ED9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02Application", "02Application", "{EE505131-18C0-44E8-ACFC-D4333FFBB9B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03Persistance", "03Persistance", "{64934678-E664-469B-9165-0BB245EDF28E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04Domain", "04Domain", "{19988385-B472-41C5-B28C-6A4F4CBD7186}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00BootStrapper", "00BootStrapper", "{CF3B10F9-0D17-417E-B96B-3E76A70BA559}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteBoxApplication", "NoteBoxApplication\NoteBoxApplication.csproj", "{ED2AB2A0-E2DB-4964-A179-6E07E6A479B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteBoxPersistance", "NoteBoxPersistance\NoteBoxPersistance.csproj", "{82646FCC-D2A3-468B-940D-6FA7BF9DF713}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteBoxDomain", "NoteBoxDomain\NoteBoxDomain.csproj", "{8304408D-269D-4C3C-BF65-BF32CC63E20C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA3CA414-AA6F-411A-A06E-780FD1AAF681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA3CA414-AA6F-411A-A06E-780FD1AAF681}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA3CA414-AA6F-411A-A06E-780FD1AAF681}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA3CA414-AA6F-411A-A06E-780FD1AAF681}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED2AB2A0-E2DB-4964-A179-6E07E6A479B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED2AB2A0-E2DB-4964-A179-6E07E6A479B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED2AB2A0-E2DB-4964-A179-6E07E6A479B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED2AB2A0-E2DB-4964-A179-6E07E6A479B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82646FCC-D2A3-468B-940D-6FA7BF9DF713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82646FCC-D2A3-468B-940D-6FA7BF9DF713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82646FCC-D2A3-468B-940D-6FA7BF9DF713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82646FCC-D2A3-468B-940D-6FA7BF9DF713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8304408D-269D-4C3C-BF65-BF32CC63E20C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8304408D-269D-4C3C-BF65-BF32CC63E20C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8304408D-269D-4C3C-BF65-BF32CC63E20C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8304408D-269D-4C3C-BF65-BF32CC63E20C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AA3CA414-AA6F-411A-A06E-780FD1AAF681} = {BFB2F1CE-B1AC-418E-A4E8-13E34B398ED9}
+		{ED2AB2A0-E2DB-4964-A179-6E07E6A479B0} = {EE505131-18C0-44E8-ACFC-D4333FFBB9B7}
+		{82646FCC-D2A3-468B-940D-6FA7BF9DF713} = {64934678-E664-469B-9165-0BB245EDF28E}
+		{8304408D-269D-4C3C-BF65-BF32CC63E20C} = {19988385-B472-41C5-B28C-6A4F4CBD7186}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6C3CD03-81B3-4FE0-9D46-90DA640F3513}
+	EndGlobalSection
+EndGlobal
