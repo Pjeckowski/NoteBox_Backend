@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteBox", "NoteBox\NoteBox.csproj", "{AA3CA414-AA6F-411A-A06E-780FD1AAF681}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteBoxService", "NoteBox\NoteBoxService.csproj", "{AA3CA414-AA6F-411A-A06E-780FD1AAF681}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01Service", "01Service", "{BFB2F1CE-B1AC-418E-A4E8-13E34B398ED9}"
 EndProject
@@ -15,11 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04Domain", "04Domain", "{19
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00BootStrapper", "00BootStrapper", "{CF3B10F9-0D17-417E-B96B-3E76A70BA559}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteBoxApplication", "NoteBoxApplication\NoteBoxApplication.csproj", "{ED2AB2A0-E2DB-4964-A179-6E07E6A479B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteBoxApplication", "NoteBoxApplication\NoteBoxApplication.csproj", "{ED2AB2A0-E2DB-4964-A179-6E07E6A479B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteBoxPersistance", "NoteBoxPersistance\NoteBoxPersistance.csproj", "{82646FCC-D2A3-468B-940D-6FA7BF9DF713}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteBoxPersistance", "NoteBoxPersistance\NoteBoxPersistance.csproj", "{82646FCC-D2A3-468B-940D-6FA7BF9DF713}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteBoxDomain", "NoteBoxDomain\NoteBoxDomain.csproj", "{8304408D-269D-4C3C-BF65-BF32CC63E20C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteBoxDomain", "NoteBoxDomain\NoteBoxDomain.csproj", "{8304408D-269D-4C3C-BF65-BF32CC63E20C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
