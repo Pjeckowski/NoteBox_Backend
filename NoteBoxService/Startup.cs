@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using NoteBoxApplication;
+using NoteBoxService.Controllers;
 
 namespace NoteBox
 {
@@ -23,7 +25,9 @@ namespace NoteBox
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc().AddControllersAsServices();
+            services.AddTransient(ctx => new UserController(new GetUserHandler()));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
