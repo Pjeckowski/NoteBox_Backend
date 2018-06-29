@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NoteBoxApplication;
+using NoteBoxDomain.UserDto;
 
 namespace NoteBoxService.Controllers
 {
@@ -7,32 +8,32 @@ namespace NoteBoxService.Controllers
     [Route("api/User")]
     public class UserController : Controller
     {
-        private readonly IGetUserHandler _getUserHandler;
+        private readonly IUserAplicatinService _userApplication;
 
-        public UserController(IGetUserHandler getUserHandler)
+        public UserController(IUserAplicatinService userApplicationService)
         {
-            _getUserHandler = getUserHandler;
+            _userApplication = userApplicationService;
         }
 
         // GET: api/User
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(new { val1 = "value1", val2 = "value2" });
+            return Ok(_userApplication.GetUsers());
         }
 
         // GET: api/User/5
         [HttpGet("{id}", Name = "Get")]
         public IActionResult Get(int id)
         {
-            return Ok(_getUserHandler.Handle(id));
+            return Ok(_userApplication.GetUserById(id));
         }
         
         // POST: api/User
         [HttpPost]
-        public IActionResult Post()
+        public IActionResult Post([FromBody]UserWithPasswordDto userWithPasswordDto)
         {
-            return Ok();
+            return Ok( _userApplication.AddUser(userWithPasswordDto).Result);
         }
         
         

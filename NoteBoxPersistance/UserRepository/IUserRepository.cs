@@ -1,4 +1,5 @@
-﻿using NoteBoxDomain.UserDataModel;
+﻿using System.Collections.Generic;
+using NoteBoxDomain.UserDataModel;
 
 namespace NoteBoxPersistance.UserRepository
 {
@@ -9,6 +10,8 @@ namespace NoteBoxPersistance.UserRepository
         IUserDataModel UpdateUser(IUserDataModel user);
 
         void DeleteUser(uint id);
+
+        List<IUserDataModel> ReadUsers();
 
         IUserDataModel ReadUser(uint id);
     }

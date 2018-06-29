@@ -2,8 +2,11 @@
 
 namespace NoteBoxDomain.UserDto
 {
-    public interface IUserToDtoMapper
+    public interface IUserMapper
     {
         IUserDto MapUserToDto(IUserDataModel user);
+
+        IUserDataModel MapDtoToUserModel(IUserWithPasswordDto user);
+
     }
 }

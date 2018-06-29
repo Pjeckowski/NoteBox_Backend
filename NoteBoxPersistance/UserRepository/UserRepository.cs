@@ -15,7 +15,7 @@ namespace NoteBoxPersistance.UserRepository
             {
                 new UserDataModel()
                 {
-                    ID = 1,
+                    ID = 0,
                     Nick = "RandomNick",
                     Email = "RandomEmail@o2.pl",
                     Password = "RandomPassword"
@@ -41,6 +41,11 @@ namespace NoteBoxPersistance.UserRepository
         public void DeleteUser(uint id)
         {
             _users.Remove(_users[(int)id]);
+        }
+
+        public List<IUserDataModel> ReadUsers()
+        {
+            return _users;
         }
 
         public IUserDataModel ReadUser(uint id)
