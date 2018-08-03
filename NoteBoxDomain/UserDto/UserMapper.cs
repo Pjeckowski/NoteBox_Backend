@@ -1,22 +1,22 @@
-﻿using NoteBoxDomain.UserDataModel;
+﻿using Notebox.UserDBModel.UserDataModel;
 
 namespace NoteBoxDomain.UserDto
 {
     public class UserMapper : IUserMapper
     {
-        public IUserDto MapUserToDto(IUserDataModel user)
+        public UserDto MapUserToDto(UserDbModel user)
         {
             return new UserDto()
             {
-                ID = user.ID,
+                ID = user.Id,
                 Email = user.Email,
                 Nick = user.Nick
             };
         }
 
-        public IUserDataModel MapDtoToUserModel(IUserWithPasswordDto user)
+        public UserDbModel MapDtoToUserModel(UserWithPasswordDto user)
         {
-            return new UserDataModel.UserDataModel()
+            return new UserDbModel()
             {
                 Email = user.Email,
                 Nick = user.Nick,

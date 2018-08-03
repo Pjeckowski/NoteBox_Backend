@@ -1,8 +1,8 @@
-﻿namespace NoteBoxDomain.UserDataModel
+﻿namespace Notebox.UserDBModel.UserDataModel
 {
-    public class UserDataModel : IUserDataModel
+    public class UserDbModel : IUserDbModel
     {
-        public uint ID { get; set; }
+        public int Id { get; set; }
         public string Nick { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Notebox.Data.UserRepository;
 using NoteBoxDomain.UserDto;
-using NoteBoxPersistance.UserRepository;
 
 namespace NoteBoxApplication
 {
@@ -15,15 +15,20 @@ namespace NoteBoxApplication
             _userRepository = new UserRepository();
             _mapper = new UserMapper();
         }
-        public IUserDto GetUserById(int id)
+        public UserDto GetUserById(int id)
         {
-            return _mapper.MapUserToDto(_userRepository.ReadUser((uint) id));
+            return _mapper.MapUserToDto(_userRepository.ReadUser(id));
         }
 
-        public List<IUserDto> GetUsers()
+        public List<UserDto> GetUsers()
         {
+
+            return new List<UserDto>{new UserDto
+            {
+                Email = "kupa"
+            }};
             var usersList = _userRepository.ReadUsers();
-            List<IUserDto> userDtos = new List<IUserDto>();
+            List<UserDto> userDtos = new List<UserDto>();
 
             foreach (var user in usersList)
             {
@@ -33,7 +38,7 @@ namespace NoteBoxApplication
             return userDtos;
         }
 
-        public Task<IUserDto> AddUser(IUserWithPasswordDto user)
+        public Task<UserDto> AddUser(UserWithPasswordDto user)
         {
             var userDataModel = _userRepository.CreateUser(_mapper.MapDtoToUserModel(user));
 

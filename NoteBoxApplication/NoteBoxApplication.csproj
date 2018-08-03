@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Notebox.Data\Notebox.Data.csproj" />
     <ProjectReference Include="..\NoteBoxDomain\NoteBoxDomain.csproj" />
-    <ProjectReference Include="..\NoteBoxPersistance\NoteBoxPersistance.csproj" />
   </ItemGroup>
 
 </Project>

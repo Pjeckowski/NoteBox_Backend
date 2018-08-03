@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using NoteBoxApplication;
 using NoteBoxDomain.UserDto;
 
@@ -19,7 +22,7 @@ namespace NoteBoxService.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_userApplication.GetUsers());
+            return HandleException(() => _userApplication.GetUsers());
         }
 
         // GET: api/User/5
@@ -49,6 +52,21 @@ namespace NoteBoxService.Controllers
         public IActionResult Delete(int id)
         {
             return Ok();
+        }
+
+        private IActionResult HandleException<T>(Func<T> actionFunc)
+        {
+            T result;
+            try
+            {
+                result =  actionFunc();
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+
+            return NotFound();
         }
     }
 }

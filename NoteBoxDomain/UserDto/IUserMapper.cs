@@ -1,12 +1,13 @@
-﻿using NoteBoxDomain.UserDataModel;
+﻿
+using Notebox.UserDBModel.UserDataModel;
 
 namespace NoteBoxDomain.UserDto
 {
     public interface IUserMapper
     {
-        IUserDto MapUserToDto(IUserDataModel user);
+        UserDto MapUserToDto(UserDbModel user);
 
-        IUserDataModel MapDtoToUserModel(IUserWithPasswordDto user);
+        UserDbModel MapDtoToUserModel(UserWithPasswordDto user);
 
     }
 }

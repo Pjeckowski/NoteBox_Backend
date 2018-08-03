@@ -1,12 +1,10 @@
-﻿namespace NoteBoxDomain.UserDataModel
+﻿namespace Notebox.UserDBModel.UserDataModel
 {
-    public interface IUserDataModel
+    public interface IUserDbModel
     {
-        uint ID { get; set; }
+        int Id { get; set; }
         string Nick { get; set; }
-
         string Email { get; set; }
-
         string Password { get; set; }
     }
 }
