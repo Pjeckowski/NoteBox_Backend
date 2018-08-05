@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Notebox.Data.UserRepository;
+using Notebox.Data;
+using Notebox.Data.Contract;
 using NoteBoxDomain.UserDto;
 
 namespace NoteBoxApplication
@@ -12,7 +13,7 @@ namespace NoteBoxApplication
 
         public UserApplicationService()
         {
-            _userRepository = new UserRepository();
+            _userRepository = new UserRepository(new ContextFactory());
             _mapper = new UserMapper();
         }
         public UserDto GetUserById(int id)

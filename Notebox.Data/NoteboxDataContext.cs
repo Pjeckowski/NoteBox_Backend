@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Notebox.Data.Contract;
 using Notebox.UserDBModel.UserDataModel;
 
 namespace Notebox.Data
 {
-    public class NoteboxDataContext: DbContext
+    public class NoteboxDataContext: DbContext, IUserDataContext
     {
         public DbSet<UserDbModel> Users { get; set; }
 

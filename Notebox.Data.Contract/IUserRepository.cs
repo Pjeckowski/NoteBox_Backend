@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Notebox.UserDBModel.UserDataModel;
 
-namespace Notebox.Data.UserRepository
+namespace Notebox.Data.Contract
 {
     public interface IUserRepository
     {
