@@ -11,10 +11,10 @@ namespace NoteBoxApplication
         private readonly IUserRepository _userRepository;
         private readonly IUserMapper _mapper;
 
-        public UserApplicationService()
+        public UserApplicationService(IUserRepository userRepository, IUserMapper userMapper)
         {
-            _userRepository = new UserRepository(new ContextFactory());
-            _mapper = new UserMapper();
+            _userRepository = userRepository;
+            _mapper = userMapper;
         }
         public UserDto GetUserById(int id)
         {
@@ -23,11 +23,6 @@ namespace NoteBoxApplication
 
         public List<UserDto> GetUsers()
         {
-
-            return new List<UserDto>{new UserDto
-            {
-                Email = "kupa"
-            }};
             var usersList = _userRepository.ReadUsers();
             List<UserDto> userDtos = new List<UserDto>();
 

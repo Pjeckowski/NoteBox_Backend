@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace NoteBoxDomain.UserDto
+﻿namespace NoteBoxDomain.UserDto
 {
     public interface IUserWithPasswordDto
     {

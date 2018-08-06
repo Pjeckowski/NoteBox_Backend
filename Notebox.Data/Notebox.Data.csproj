@@ -131,6 +131,7 @@
     <Compile Include="Migrations\NoteboxDataContextModelSnapshot.cs" />
     <Compile Include="NoteboxDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MockUserRepository.cs" />
     <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>

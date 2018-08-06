@@ -2,7 +2,10 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Notebox.Data;
+using Notebox.Data.Contract;
 using NoteBoxApplication;
+using NoteBoxDomain.UserDto;
 
 namespace NoteBoxService
 {
@@ -20,6 +23,9 @@ namespace NoteBoxService
         {
             services.AddMvc().AddControllersAsServices();
             services.AddScoped<IUserAplicatinService, UserApplicationService>();
+            services.AddScoped<IUserDataContextFactory, ContextFactory>();
+            services.AddSingleton<IUserRepository, MockUserRepository>();
+            services.AddScoped<IUserMapper, UserMapper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

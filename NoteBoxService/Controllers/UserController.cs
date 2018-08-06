@@ -22,21 +22,21 @@ namespace NoteBoxService.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return HandleException(() => _userApplication.GetUsers());
+            return Ok(); //HandleException(() => _userApplication.GetUsers());
         }
 
         // GET: api/User/5
         [HttpGet("{id}", Name = "Get")]
         public IActionResult Get(int id)
         {
-            return Ok(_userApplication.GetUserById(id));
+            return Ok(); //HandleException(() => _userApplication.GetUserById(id));
         }
         
         // POST: api/User
         [HttpPost]
-        public IActionResult Post([FromBody]UserWithPasswordDto userWithPasswordDto)
+        public async Task<IActionResult> Post([FromBody]UserWithPasswordDto userWithPasswordDto)
         {
-            return Ok( _userApplication.AddUser(userWithPasswordDto).Result);
+            return await HandleException(() => _userApplication.AddUser(userWithPasswordDto));
         }
         
         
@@ -54,19 +54,19 @@ namespace NoteBoxService.Controllers
             return Ok();
         }
 
-        private IActionResult HandleException<T>(Func<T> actionFunc)
+        private async Task<IActionResult> HandleException<T>( Func<Task<T>> actionFunc)
         {
             T result;
             try
             {
-                result =  actionFunc();
+                result =  await actionFunc();
             }
             catch (Exception e)
             {
                 return NotFound(e.Message);
             }
 
-            return NotFound();
+            return Ok(result);
         }
     }
 }
