@@ -7,7 +7,6 @@ namespace Notebox.Data.Contract
     public interface IUserDataContext : IDisposable
     {
         DbSet<UserDbModel> Users { get; set; }
-
         int SaveChanges();
     }
 }

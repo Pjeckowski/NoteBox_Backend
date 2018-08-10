@@ -16,14 +16,14 @@ namespace NoteBoxApplication
             _userRepository = userRepository;
             _mapper = userMapper;
         }
-        public UserDto GetUserById(int id)
+        public async Task<UserDto> GetUserByIdAsync(int id)
         {
-            return _mapper.MapUserToDto(_userRepository.ReadUser(id));
+            return _mapper.MapUserToDto(await _userRepository.ReadUserAsync(id));
         }
 
-        public List<UserDto> GetUsers()
+        public async Task<List<UserDto>> GetUsersAsync()
         {
-            var usersList = _userRepository.ReadUsers();
+            var usersList = await _userRepository.ReadUsersAsync();
             List<UserDto> userDtos = new List<UserDto>();
 
             foreach (var user in usersList)
@@ -34,11 +34,11 @@ namespace NoteBoxApplication
             return userDtos;
         }
 
-        public Task<UserDto> AddUser(UserWithPasswordDto user)
+        public async Task<UserDto> AddUserAsync(UserWithPasswordDto user)
         {
-            var userDataModel = _userRepository.CreateUser(_mapper.MapDtoToUserModel(user));
+            var userDataModel = await _userRepository.CreateUserAsync(_mapper.MapDtoToUserModel(user));
 
-            return Task.FromResult(_mapper.MapUserToDto(userDataModel));
+            return _mapper.MapUserToDto(userDataModel);
         }
     }
 }

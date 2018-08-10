@@ -1,18 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Notebox.UserDBModel.UserDataModel;
 
 namespace Notebox.Data.Contract
 {
     public interface IUserRepository
     {
-        UserDbModel CreateUser(UserDbModel user);
-
-        void UpdateUser(UserDbModel user);
-
-        void DeleteUser(int id);
-
-        List<UserDbModel> ReadUsers();
-
-        UserDbModel ReadUser(int id);
+        Task<UserDbModel> CreateUserAsync(UserDbModel user);
+        Task<List<UserDbModel>> ReadUsersAsync();
+        Task<UserDbModel> ReadUserAsync(int id);
+        Task UpdateUserAsync(UserDbModel user);
+        Task DeleteUserAsync(int id);
     }
 }

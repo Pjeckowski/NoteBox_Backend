@@ -6,10 +6,10 @@ namespace NoteBoxApplication
 {
     public interface IUserAplicatinService
     {
-        UserDto GetUserById(int id);
+        Task<UserDto> GetUserByIdAsync(int id);
 
-        List<UserDto> GetUsers();
+        Task<List<UserDto>> GetUsersAsync();
 
-        Task<UserDto> AddUser(UserWithPasswordDto user);
+        Task<UserDto> AddUserAsync(UserWithPasswordDto user);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Notebox.Data.Contract;
 using Notebox.UserDBModel.UserDataModel;
 
@@ -14,48 +15,48 @@ namespace Notebox.Data
             _userDataContextFactory = userDataContextFactory;
         }
 
-        public UserDbModel CreateUser(UserDbModel user)
+        public async Task<UserDbModel> CreateUserAsync(UserDbModel user)
         {
             using (var context = _userDataContextFactory.GetUserDataContext())
             {
                 context.Users.Add(user);
                 context.SaveChanges();
-                return context.Users.SingleOrDefault(x => x.Nick.Equals(user.Nick));
+                return await context.Users.SingleOrDefaultAsync(x => x.Nick.Equals(user.Nick));
             }
         }
 
-        public void UpdateUser(UserDbModel user)
+        public async Task UpdateUserAsync(UserDbModel user)
         {
             using (var context = _userDataContextFactory.GetUserDataContext())
             {
-                var userDb = context.Users.SingleOrDefault(x => x.Id.Equals(user.Id));
+                var userDb = await context.Users.SingleOrDefaultAsync(x => x.Id.Equals(user.Id));
                 userDb.Nick = user.Nick;
                 userDb.Email = user.Email;
                 context.SaveChanges();
             }
         }
 
-        public void DeleteUser(int id)
+        public async Task DeleteUserAsync(int id)
         {
             using (var context = _userDataContextFactory.GetUserDataContext())
             {
-                var user = context.Users.SingleOrDefault(x => x.Id.Equals(id));
+                var user = await context.Users.SingleOrDefaultAsync(x => x.Id.Equals(id));
                 if (null != user)
                     context.Users.Remove(user);
                 context.SaveChanges();
             }
         }
 
-        public List<UserDbModel> ReadUsers()
+        public async Task<List<UserDbModel>> ReadUsersAsync()
         {
             using (var context = _userDataContextFactory.GetUserDataContext())
-                return context.Users.ToList();
+                return await context.Users.ToListAsync();
         }
 
-        public UserDbModel ReadUser(int id)
+        public async Task<UserDbModel> ReadUserAsync(int id)
         {
             using (var context = _userDataContextFactory.GetUserDataContext())
-                return context.Users.SingleOrDefault(x => x.Id.Equals(id));
+                return await context.Users.SingleOrDefaultAsync(x => x.Id.Equals(id));
         }
     }
 }

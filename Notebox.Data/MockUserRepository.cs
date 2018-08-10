@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Notebox.Data.Contract;
 using Notebox.UserDBModel.UserDataModel;
 
@@ -7,10 +8,9 @@ namespace Notebox.Data
 {
     public class MockUserRepository: IUserRepository
     {
-        private readonly IUserDataContextFactory _userDataContextFactory;
         private List<UserDbModel> _users;
         private int _id;
-        public MockUserRepository(IUserDataContextFactory userDataContextFactory)
+        public MockUserRepository()
         {
             _users = new List<UserDbModel>
             {
@@ -40,14 +40,14 @@ namespace Notebox.Data
             _id = 4;
         }
 
-        public UserDbModel CreateUser(UserDbModel user)
+        public async Task<UserDbModel> CreateUserAsync(UserDbModel user)
         {
             user.Id = _id++;
             _users.Add(user);
             return user;
         }
 
-        public void UpdateUser(UserDbModel user)
+        public async Task UpdateUserAsync(UserDbModel user)
         {
             var userDb = _users.SingleOrDefault(x => x.Id.Equals(user.Id));
             userDb.Email = user.Email;
@@ -55,18 +55,18 @@ namespace Notebox.Data
             userDb.Password = user.Password;
         }
 
-        public void DeleteUser(int id)
+        public async Task DeleteUserAsync(int id)
         {
             var userDb = _users.SingleOrDefault(x => x.Id.Equals(id));
             _users.Remove(userDb);
         }
 
-        public List<UserDbModel> ReadUsers()
+        public async Task<List<UserDbModel>> ReadUsersAsync()
         {
             return _users;
         }
 
-        public UserDbModel ReadUser(int id)
+        public async Task<UserDbModel> ReadUserAsync(int id)
         {
             return _users.SingleOrDefault(x => x.Id.Equals(id));
         }
