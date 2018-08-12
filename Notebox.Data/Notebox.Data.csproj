@@ -124,15 +124,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContextFactory.cs" />
-    <Compile Include="Migrations\20180801175238_Initial.cs" />
-    <Compile Include="Migrations\20180801175238_Initial.designer.cs">
-      <DependentUpon>20180801175238_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\20180812150708_MajorMigration.cs" />
+    <Compile Include="Migrations\20180812150708_MajorMigration.designer.cs">
+      <DependentUpon>20180812150708_MajorMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\NoteboxDataContextModelSnapshot.cs" />
     <Compile Include="NoteboxDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MockUserRepository.cs" />
-    <Compile Include="UserRepository.cs" />
+    <Compile Include="UserRepo\MockUserRepository.cs" />
+    <Compile Include="UserRepo\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -143,11 +143,12 @@
       <Project>{32794479-36C5-42F0-AE85-22C31D14B08E}</Project>
       <Name>Notebox.Data.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Notebox.UserDBModel\Notebox.UserDBModel.csproj">
+    <ProjectReference Include="..\Notebox.UserDBModel\Notebox.DBModels.csproj">
       <Project>{183140D5-5D88-4F91-8874-2FF5CAA934F4}</Project>
-      <Name>Notebox.UserDBModel</Name>
+      <Name>Notebox.DBModels</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

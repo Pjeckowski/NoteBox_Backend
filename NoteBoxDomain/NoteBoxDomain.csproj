@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Notebox.UserDBModel\Notebox.UserDBModel.csproj" />
+    <ProjectReference Include="..\Notebox.UserDBModel\Notebox.DBModels.csproj" />
   </ItemGroup>
 
 </Project>

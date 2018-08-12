@@ -1,4 +1,4 @@
-﻿namespace Notebox.UserDBModel.UserDataModel
+﻿namespace Notebox.DBModels.UserDataModel
 {
     public interface IUserDbModel
     {

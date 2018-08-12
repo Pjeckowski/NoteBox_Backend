@@ -1,5 +1,5 @@
 ﻿
-using Notebox.UserDBModel.UserDataModel;
+using Notebox.DBModels.UserDataModel;
 
 namespace NoteBoxDomain.UserDto
 {

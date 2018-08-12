@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using Notebox.UserDBModel.UserDataModel;
+using Notebox.DBModels.UserDataModel;
 
 namespace Notebox.Data.Contract
 {

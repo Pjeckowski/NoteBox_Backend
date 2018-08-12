@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteBoxService", "NoteBoxSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notebox.Data", "Notebox.Data\Notebox.Data.csproj", "{73A8DCF8-ACB8-47BE-BC4F-70382B321289}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notebox.UserDBModel", "Notebox.UserDBModel\Notebox.UserDBModel.csproj", "{183140D5-5D88-4F91-8874-2FF5CAA934F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notebox.DBModels", "Notebox.UserDBModel\Notebox.DBModels.csproj", "{183140D5-5D88-4F91-8874-2FF5CAA934F4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notebox.Data.Contract", "Notebox.Data.Contract\Notebox.Data.Contract.csproj", "{32794479-36C5-42F0-AE85-22C31D14B08E}"
 EndProject

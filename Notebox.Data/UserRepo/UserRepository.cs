@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Notebox.Data.Contract;
-using Notebox.UserDBModel.UserDataModel;
+using Notebox.DBModels.UserDataModel;
 
-namespace Notebox.Data
+namespace Notebox.Data.UserRepo
 {
     public class UserRepository: IUserRepository
     {

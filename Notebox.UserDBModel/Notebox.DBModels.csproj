@@ -7,8 +7,8 @@
     <ProjectGuid>{183140D5-5D88-4F91-8874-2FF5CAA934F4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Notebox.UserDBModel</RootNamespace>
-    <AssemblyName>Notebox.UserDBModel</AssemblyName>
+    <RootNamespace>Notebox.DBModels</RootNamespace>
+    <AssemblyName>Notebox.DBModels</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MajorDataModel\IMajorDbModel.cs" />
+    <Compile Include="MajorDataModel\MajorDbModel.cs" />
+    <Compile Include="MajorDataModel\MajorToUserDbModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserDataModel\IUserDbModel.cs" />
     <Compile Include="UserDataModel\UserDbModel.cs" />

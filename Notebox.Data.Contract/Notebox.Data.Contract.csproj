@@ -114,9 +114,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Notebox.UserDBModel\Notebox.UserDBModel.csproj">
+    <ProjectReference Include="..\Notebox.UserDBModel\Notebox.DBModels.csproj">
       <Project>{183140D5-5D88-4F91-8874-2FF5CAA934F4}</Project>
-      <Name>Notebox.UserDBModel</Name>
+      <Name>Notebox.DBModels</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
