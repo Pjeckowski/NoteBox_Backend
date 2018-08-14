@@ -124,6 +124,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContextFactory.cs" />
+    <Compile Include="MajorRepo\MockMajorRepository.cs" />
+    <Compile Include="MajorRepo\MajorRepository.cs" />
     <Compile Include="Migrations\20180812150708_MajorMigration.cs" />
     <Compile Include="Migrations\20180812150708_MajorMigration.designer.cs">
       <DependentUpon>20180812150708_MajorMigration.cs</DependentUpon>

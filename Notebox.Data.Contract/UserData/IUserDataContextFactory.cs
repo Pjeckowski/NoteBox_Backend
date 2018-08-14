@@ -1,4 +1,4 @@
-﻿namespace Notebox.Data.Contract
+﻿namespace Notebox.Data.Contract.UserData
 {
     public interface IUserDataContextFactory
     {

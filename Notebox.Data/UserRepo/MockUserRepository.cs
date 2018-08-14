@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Notebox.Data.Contract;
+using Notebox.Data.Contract.UserData;
 using Notebox.DBModels.UserDataModel;
 
 namespace Notebox.Data.UserRepo

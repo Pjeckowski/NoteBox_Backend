@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Notebox.Data\Notebox.Data.csproj" />
+    <ProjectReference Include="..\Notebox.UserDBModel\Notebox.DBModels.csproj" />
     <ProjectReference Include="..\NoteBoxDomain\NoteBoxDomain.csproj" />
   </ItemGroup>
 

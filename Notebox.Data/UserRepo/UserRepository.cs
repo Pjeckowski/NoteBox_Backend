@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Notebox.Data.Contract;
+using Notebox.Data.Contract.UserData;
 using Notebox.DBModels.UserDataModel;
 
 namespace Notebox.Data.UserRepo

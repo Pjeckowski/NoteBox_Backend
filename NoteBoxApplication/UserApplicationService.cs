@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Notebox.Data;
-using Notebox.Data.Contract;
+using Notebox.Data.Contract.UserData;
 using NoteBoxDomain.UserDto;
 
 namespace NoteBoxApplication

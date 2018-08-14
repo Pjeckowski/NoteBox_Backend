@@ -108,9 +108,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IUserDataContext.cs" />
-    <Compile Include="IUserDataContextFactory.cs" />
-    <Compile Include="IUserRepository.cs" />
+    <Compile Include="MajorData\IMajorDataContext.cs" />
+    <Compile Include="MajorData\IMajorDataContextFactory.cs" />
+    <Compile Include="MajorData\IMajorRepository.cs" />
+    <Compile Include="UserData\IUserDataContext.cs" />
+    <Compile Include="UserData\IUserDataContextFactory.cs" />
+    <Compile Include="UserData\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

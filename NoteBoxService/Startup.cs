@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Notebox.Data;
 using Notebox.Data.Contract;
+using Notebox.Data.Contract.UserData;
 using Notebox.Data.UserRepo;
 using NoteBoxApplication;
 using NoteBoxDomain.UserDto;

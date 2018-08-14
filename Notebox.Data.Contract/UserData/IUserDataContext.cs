@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Notebox.DBModels.UserDataModel;
 
-namespace Notebox.Data.Contract
+namespace Notebox.Data.Contract.UserData
 {
     public interface IUserDataContext : IDisposable
     {

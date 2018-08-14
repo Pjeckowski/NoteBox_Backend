@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Notebox.DBModels.UserDataModel;
 
-namespace Notebox.Data.Contract
+namespace Notebox.Data.Contract.UserData
 {
     public interface IUserRepository
     {

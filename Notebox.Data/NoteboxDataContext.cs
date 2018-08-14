@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Notebox.Data.Contract;
+using Notebox.Data.Contract.MajorData;
+using Notebox.Data.Contract.UserData;
 using Notebox.DBModels.MajorDataModel;
 using Notebox.DBModels.UserDataModel;
 
 namespace Notebox.Data
 {
-    public class NoteboxDataContext: DbContext, IUserDataContext
+    public class NoteboxDataContext: DbContext, IUserDataContext, IMajorDataContext
     {
         public DbSet<UserDbModel> Users { get; set; }
         public DbSet<MajorDbModel> Majors { get; set; }
