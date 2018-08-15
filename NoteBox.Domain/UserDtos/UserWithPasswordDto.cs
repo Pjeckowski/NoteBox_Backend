@@ -1,4 +1,4 @@
-﻿namespace NoteBoxDomain.UserDto
+﻿namespace NoteBox.Domain.UserDtos
 {
     public class UserWithPasswordDto : IUserWithPasswordDto
     {

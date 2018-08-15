@@ -1,6 +1,6 @@
 ﻿using Notebox.DBModels.UserDataModel;
 
-namespace NoteBoxDomain.UserDto
+namespace NoteBox.Domain.UserDtos
 {
     public class UserMapper : IUserMapper
     {
@@ -8,7 +8,7 @@ namespace NoteBoxDomain.UserDto
         {
             return new UserDto()
             {
-                ID = user.Id,
+                Id = user.Id,
                 Email = user.Email,
                 Nick = user.Nick
             };

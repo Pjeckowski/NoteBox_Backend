@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Notebox.Data.Contract.UserData;
-using NoteBoxDomain.UserDto;
+using NoteBox.Application.Contract;
+using NoteBox.Domain.UserDtos;
 
-namespace NoteBoxApplication
+namespace NoteBox.Application
 {
     public class UserApplicationService : IUserAplicatinService
     {

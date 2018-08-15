@@ -1,47 +1,51 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using NoteBoxApplication;
-using NoteBoxDomain.UserDto;
+using NoteBox.Application.Contract;
+using NoteBox.Domain.UserDtos;
 using NoteBoxService.ActionResultProviders;
 
 namespace NoteBoxService.Controllers
 {
     [Produces("application/json")]
-    [Route("api/User")]
-    public class UserController : Controller
+    [Route("api/users")]
+    public class UsersController : Controller
     {
         private readonly IUserAplicatinService _userApplication;
         private readonly IUserMapper _userMapper;
+        private readonly IMajorApplicationService _majorApplication;
 
-        public UserController(IUserAplicatinService userApplicationService)
+        public UsersController(IUserAplicatinService userApplicationService, IMajorApplicationService majorApplicationService)
         {
             _userApplication = userApplicationService;
             _userMapper = new UserMapper();
+            _majorApplication = majorApplicationService;
         }
 
+        #region usersActions
+            
         // GET: api/User
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var result = await HandleException(async () => await _userApplication.GetUsersAsync());
-            return result.ActionResultProvider.GetActionResult(result.ResultObject);
+            var actionResultWrapper = await HandleException(async () => await _userApplication.GetUsersAsync());
+            return actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.ResultObject);
         }
 
         // GET: api/User/5
         [HttpGet("{id}", Name = "Get")]
         public async Task<IActionResult> Get(int id)
         {
-            var result = await HandleException(async () => await _userApplication.GetUserByIdAsync(id));
-            return result.IsFaulted ?  result.ActionResultProvider.GetActionResult(result.FaultMessage) : result.ActionResultProvider.GetActionResult(result.ResultObject);
+            var actionResultWrapper = await HandleException(async () => await _userApplication.GetUserByIdAsync(id));
+            return actionResultWrapper.IsFaulted ?  actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.FaultMessage) : actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.ResultObject);
         }
         
         // POST: api/User
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]UserWithPasswordDto userWithPasswordDto)
         {
-            var result = await HandleException(async () => await _userApplication.AddUserAsync(userWithPasswordDto));
-            return result.ActionResultProvider.GetActionResult(result.ResultObject);
+            var actionResultWrapper = await HandleException(async () => await _userApplication.AddUserAsync(userWithPasswordDto));
+            return actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.ResultObject);
         }
         
         
@@ -57,6 +61,15 @@ namespace NoteBoxService.Controllers
         public IActionResult Delete(int id)
         {
             return Ok();
+        }
+        #endregion
+
+        [HttpGet("{userId}")]
+        [Route("{userId}/majors")]
+        public async Task<IActionResult> GetUserMajors(int userId)
+        {
+            var actionResultWrapper = await HandleException(async () => await _majorApplication.GetUserMajors(userId));
+            return actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.ResultObject);
         }
 
         //why not just returning action result??

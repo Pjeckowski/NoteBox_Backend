@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NoteBoxDomain\NoteBoxDomain.csproj" />
+    <ProjectReference Include="..\NoteBox.Domain\NoteBox.Domain.csproj" />
   </ItemGroup>
 
 </Project>

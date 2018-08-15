@@ -13,7 +13,39 @@ namespace Notebox.Data.MajorRepo
 
         public MockMajorRepository()
         {
-            
+            _majors = new List<MajorDbModel>()
+            {
+                new MajorDbModel
+                {
+                    Id = 1,
+                    Name = "Automatyka i Robotyka",
+                    OwnerId = 1,
+                    City = "Szczecin",
+                    School = "Zachodniopomorski Uniwersytet Technologiczny",
+                    StartYear = 2014,
+                    EndYear = 2018
+                },
+                new MajorDbModel
+                {
+                    Id = 2,
+                    Name = "Inżynieria Cyfryzacji",
+                    OwnerId = 2,
+                    City = "Szczecin",
+                    School = "Zachodniopomorski Uniwersytet Technologiczny",
+                    StartYear = 2014,
+                    EndYear = 2018
+                },
+                new MajorDbModel
+                {
+                    Id = 3,
+                    Name = "Finanse i Rachunkowość",
+                    OwnerId = 3,
+                    City = "Szczecin",
+                    School = "Uniwersytet Szczeciński",
+                    StartYear = 2015,
+                    EndYear = 2018
+                },
+            };
         }
 
         public async Task<MajorDbModel> CreateMajorAsync(MajorDbModel major)

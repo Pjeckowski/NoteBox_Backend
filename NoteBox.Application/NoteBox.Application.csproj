@@ -5,9 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NoteBox.Application.Contract\NoteBox.Application.Contract.csproj" />
+    <ProjectReference Include="..\Notebox.Data.Contract\Notebox.Data.Contract.csproj" />
     <ProjectReference Include="..\Notebox.Data\Notebox.Data.csproj" />
+    <ProjectReference Include="..\NoteBox.Domain\NoteBox.Domain.csproj" />
     <ProjectReference Include="..\Notebox.UserDBModel\Notebox.DBModels.csproj" />
-    <ProjectReference Include="..\NoteBoxDomain\NoteBoxDomain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using NoteBoxDomain.UserDto;
+using NoteBox.Domain.UserDtos;
 
-namespace NoteBoxApplication
+namespace NoteBox.Application.Contract
 {
     public interface IUserAplicatinService
     {

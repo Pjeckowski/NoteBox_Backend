@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NoteBoxApplication\NoteBoxApplication.csproj" />
-    <ProjectReference Include="..\NoteBoxDomain\NoteBoxDomain.csproj" />
+    <ProjectReference Include="..\NoteBox.Application\NoteBox.Application.csproj" />
+    <ProjectReference Include="..\NoteBox.Domain\NoteBox.Domain.csproj" />
   </ItemGroup>
 
 </Project>

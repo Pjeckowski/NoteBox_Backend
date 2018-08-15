@@ -3,11 +3,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Notebox.Data;
-using Notebox.Data.Contract;
+using Notebox.Data.Contract.MajorData;
 using Notebox.Data.Contract.UserData;
+using Notebox.Data.MajorRepo;
 using Notebox.Data.UserRepo;
-using NoteBoxApplication;
-using NoteBoxDomain.UserDto;
+using NoteBox.Application;
+using NoteBox.Application.Contract;
+using NoteBox.Domain.MajorDtos;
+using NoteBox.Domain.UserDtos;
 
 namespace NoteBoxService
 {
@@ -28,6 +31,11 @@ namespace NoteBoxService
             services.AddScoped<IUserDataContextFactory, ContextFactory>();
             services.AddSingleton<IUserRepository, MockUserRepository>();
             services.AddScoped<IUserMapper, UserMapper>();
+
+            services.AddScoped<IMajorApplicationService, MajorApplicationService>();
+            services.AddScoped<IMajorDataContextFactory, ContextFactory>();
+            services.AddScoped<IMajorRepository, MockMajorRepository>();
+            services.AddScoped<IMajorMapper, MajorMapper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

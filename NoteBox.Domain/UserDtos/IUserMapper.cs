@@ -1,7 +1,6 @@
-﻿
-using Notebox.DBModels.UserDataModel;
+﻿using Notebox.DBModels.UserDataModel;
 
-namespace NoteBoxDomain.UserDto
+namespace NoteBox.Domain.UserDtos
 {
     public interface IUserMapper
     {
