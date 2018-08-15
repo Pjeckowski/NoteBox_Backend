@@ -34,7 +34,8 @@ namespace NoteBoxService.Controllers
         public async Task<IActionResult> Get(int id)
         {
             var actionResultWrapper = await HandleException(async () => await _majorApplication.GetMajorByIdAsync(id));
-            return actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.ResultObject);
+            return actionResultWrapper.IsFaulted?  actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.FaultMessage): 
+                actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.ResultObject);
         }
 
         // POST api/<controller>
