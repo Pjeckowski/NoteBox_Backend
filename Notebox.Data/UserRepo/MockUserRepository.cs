@@ -13,32 +13,18 @@ namespace Notebox.Data.UserRepo
         private int _id;
         public MockUserRepository()
         {
-            _users = new List<UserDbModel>
+            _users = new List<UserDbModel>();
+            for (int i = 1; i < 21; i++)
             {
-                new UserDbModel()
+                _users.Add(new UserDbModel()
                 {
-                    Id = 1,
-                    Email = "kupa@o2.pl",
-                    Nick = "kupa",
-                    Password = "kupa123"
-                },
-                new UserDbModel()
-                {
-                    Id = 2,
-                    Email = "siku@o2.pl",
-                    Nick = "siku",
-                    Password = "siku123"
-                },
-                new UserDbModel()
-                {
-                    Id = 3,
-                    Email = "rzygi@o2.pl",
-                    Nick = "rzygi",
-                    Password = "rzygi123"
-                }
-            };
-
-            _id = 4;
+                    Id = i,
+                    Nick = $"RandomNick{i}",
+                    Email = $"RandomEmail{i}@o2.pl",
+                    Password = $"ranodmPassword{i}"
+                });
+            }
+            _id = 21;
         }
 
         public async Task<UserDbModel> CreateUserAsync(UserDbModel user)
@@ -64,7 +50,7 @@ namespace Notebox.Data.UserRepo
 
         public async Task<List<UserDbModel>> ReadUsersAsync()
         {
-            return _users;
+            return _users.Skip(5).Take(5).ToList();
         }
 
         public async Task<UserDbModel> ReadUserAsync(int id)

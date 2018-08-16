@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Notebox.Data.Contract.UserData;
@@ -50,7 +51,7 @@ namespace Notebox.Data.UserRepo
         public async Task<List<UserDbModel>> ReadUsersAsync()
         {
             using (var context = _userDataContextFactory.GetUserDataContext())
-                return await context.Users.ToListAsync();
+                return await context.Users.Skip(10).Take(10).ToListAsync();
         }
 
         public async Task<UserDbModel> ReadUserAsync(int id)

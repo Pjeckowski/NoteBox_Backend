@@ -9,7 +9,7 @@ using NoteBoxService.ActionResultProviders;
 
 namespace NoteBoxService.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class MajorsController : Controller
     {
         private readonly IMajorApplicationService _majorApplication;

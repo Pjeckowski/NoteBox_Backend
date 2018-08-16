@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NoteBox.Application.Contract;
@@ -8,7 +9,7 @@ using NoteBoxService.ActionResultProviders;
 namespace NoteBoxService.Controllers
 {
     [Produces("application/json")]
-    [Route("api/users")]
+    [Route("users")]
     public class UsersController : Controller
     {
         private readonly IUserAplicatinService _userApplication;
@@ -26,7 +27,7 @@ namespace NoteBoxService.Controllers
             
         // GET: api/User
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery(Name="count"), ] int? count, [FromQuery(Name = "start")] int? start)
         {
             var actionResultWrapper = await HandleException(async () => await _userApplication.GetUsersAsync());
             return actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.ResultObject);
@@ -69,7 +70,8 @@ namespace NoteBoxService.Controllers
         public async Task<IActionResult> GetUserMajors(int userId)
         {
             var actionResultWrapper = await HandleException(async () => await _majorApplication.GetUserMajors(userId));
-            return actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.ResultObject);
+            return actionResultWrapper.IsFaulted? actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.FaultMessage):
+                actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.ResultObject);
         }
 
         //why not just returning action result??

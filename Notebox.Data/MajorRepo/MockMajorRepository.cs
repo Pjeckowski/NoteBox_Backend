@@ -13,39 +13,40 @@ namespace Notebox.Data.MajorRepo
 
         public MockMajorRepository()
         {
-            _majors = new List<MajorDbModel>()
+            _majors = new List<MajorDbModel>();
+            for(int i = 1; i < 21; i++)
             {
-                new MajorDbModel
+                _majors.Add(new MajorDbModel
+                    {
+                        Id = i,
+                        Name = $"Automatyka i Robotyka{i}",
+                        OwnerId = i++,
+                        City = "Szczecin",
+                        School = "Zachodniopomorski Uniwersytet Technologiczny",
+                        StartYear = 2014,
+                        EndYear = 2018
+                    });
+                _majors.Add(new MajorDbModel
+                    {
+                        Id = i,
+                        Name = $"Inżynieria Cyfryzacji{i}",
+                        OwnerId = i++,
+                        City = "Szczecin",
+                        School = "Zachodniopomorski Uniwersytet Technologiczny",
+                        StartYear = 2014,
+                        EndYear = 2018
+                    });
+                _majors.Add(new MajorDbModel
                 {
-                    Id = 1,
-                    Name = "Automatyka i Robotyka",
-                    OwnerId = 1,
-                    City = "Szczecin",
-                    School = "Zachodniopomorski Uniwersytet Technologiczny",
-                    StartYear = 2014,
-                    EndYear = 2018
-                },
-                new MajorDbModel
-                {
-                    Id = 2,
-                    Name = "Inżynieria Cyfryzacji",
-                    OwnerId = 2,
-                    City = "Szczecin",
-                    School = "Zachodniopomorski Uniwersytet Technologiczny",
-                    StartYear = 2014,
-                    EndYear = 2018
-                },
-                new MajorDbModel
-                {
-                    Id = 3,
-                    Name = "Finanse i Rachunkowość",
-                    OwnerId = 3,
+                    Id = i,
+                    Name = $"Finanse i Rachunkowość{i}",
+                    OwnerId = i,
                     City = "Szczecin",
                     School = "Uniwersytet Szczeciński",
                     StartYear = 2015,
                     EndYear = 2018
-                },
-            };
+                });
+            }
         }
 
         public async Task<MajorDbModel> CreateMajorAsync(MajorDbModel major)
