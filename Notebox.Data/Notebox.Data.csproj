@@ -126,9 +126,9 @@
     <Compile Include="ContextFactory.cs" />
     <Compile Include="MajorRepo\MockMajorRepository.cs" />
     <Compile Include="MajorRepo\MajorRepository.cs" />
-    <Compile Include="Migrations\20180812150708_MajorMigration.cs" />
-    <Compile Include="Migrations\20180812150708_MajorMigration.designer.cs">
-      <DependentUpon>20180812150708_MajorMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20180819182929_initial.cs" />
+    <Compile Include="Migrations\20180819182929_initial.designer.cs">
+      <DependentUpon>20180819182929_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\NoteboxDataContextModelSnapshot.cs" />
     <Compile Include="NoteboxDataContext.cs" />

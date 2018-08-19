@@ -2,6 +2,9 @@
 using Notebox.Data.Contract.MajorData;
 using Notebox.Data.Contract.UserData;
 using Notebox.DBModels.MajorDataModel;
+using Notebox.DBModels.NotesDataModel;
+using Notebox.DBModels.SemesterDataModel;
+using Notebox.DBModels.SubjectDataModel;
 using Notebox.DBModels.UserDataModel;
 
 namespace Notebox.Data
@@ -11,6 +14,11 @@ namespace Notebox.Data
         public DbSet<UserDbModel> Users { get; set; }
         public DbSet<MajorDbModel> Majors { get; set; }
         public DbSet<MajorToUserDbModel> MajorsToUsers { get; set; }
+        public DbSet<SemesterDbModel> Semesters { get; set; }
+        public DbSet<SubjectDbModel> Subjects { get; set; }
+        public DbSet<NoteDbModel> Notes { get; set; }
+        public DbSet<TextNoteContentDbModel> TextNotesContent { get; set; }
+        public DbSet<NoteCommentDbModel> NoteComments { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -30,6 +38,10 @@ namespace Notebox.Data
 
             modelBuilder.Entity<UserDbModel>()
                 .HasIndex(u => new { u.Email })
+                .IsUnique(true);
+
+            modelBuilder.Entity<SemesterDbModel>()
+                .HasIndex(s => new {s.Semester, s.MajorId})
                 .IsUnique(true);
         }
     }
