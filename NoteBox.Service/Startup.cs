@@ -6,13 +6,13 @@ using Notebox.Data;
 using Notebox.Data.Contract.MajorData;
 using Notebox.Data.Contract.UserData;
 using Notebox.Data.MajorRepo;
-using Notebox.Data.UserRepo;
 using NoteBox.Application;
 using NoteBox.Application.Contract;
+using NoteBox.Data.UserRepo;
 using NoteBox.Domain.MajorDtos;
 using NoteBox.Domain.UserDtos;
 
-namespace NoteBoxService
+namespace NoteBox.Service
 {
     public class Startup
     {

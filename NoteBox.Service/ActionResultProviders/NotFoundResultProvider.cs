@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace NoteBoxService.ActionResultProviders
+namespace NoteBox.Service.ActionResultProviders
 {
     public class NotFoundResultProvider : IActionResultProvider
     {

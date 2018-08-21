@@ -141,13 +141,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Notebox.Data.Contract\Notebox.Data.Contract.csproj">
+    <ProjectReference Include="..\Notebox.Data.Contract\NoteBox.Data.Contract.csproj">
       <Project>{32794479-36C5-42F0-AE85-22C31D14B08E}</Project>
-      <Name>Notebox.Data.Contract</Name>
+      <Name>NoteBox.Data.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Notebox.UserDBModel\Notebox.DBModels.csproj">
+    <ProjectReference Include="..\Notebox.DBModels\NoteBox.DBModels.csproj">
       <Project>{183140D5-5D88-4F91-8874-2FF5CAA934F4}</Project>
-      <Name>Notebox.DBModels</Name>
+      <Name>NoteBox.DBModels</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

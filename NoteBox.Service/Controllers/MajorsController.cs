@@ -3,11 +3,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NoteBox.Application.Contract;
 using NoteBox.Domain.MajorDtos;
-using NoteBoxService.ActionResultProviders;
+using NoteBox.Service.ActionResultProviders;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace NoteBoxService.Controllers
+namespace NoteBox.Service.Controllers
 {
     [Route("[controller]")]
     public class MajorsController : Controller

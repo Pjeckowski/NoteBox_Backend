@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27703.2026
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01Service", "01Service", "{BFB2F1CE-B1AC-418E-A4E8-13E34B398ED9}"
 EndProject
@@ -13,19 +13,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04Domain", "04Domain", "{19
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00BootStrapper", "00BootStrapper", "{CF3B10F9-0D17-417E-B96B-3E76A70BA559}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteBoxService", "NoteBoxService\NoteBoxService.csproj", "{1D1EFEC8-10FD-4D90-A78C-CF4B96633840}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteBox.Data", "Notebox.Data\NoteBox.Data.csproj", "{73A8DCF8-ACB8-47BE-BC4F-70382B321289}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notebox.Data", "Notebox.Data\Notebox.Data.csproj", "{73A8DCF8-ACB8-47BE-BC4F-70382B321289}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notebox.DBModels", "Notebox.UserDBModel\Notebox.DBModels.csproj", "{183140D5-5D88-4F91-8874-2FF5CAA934F4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notebox.Data.Contract", "Notebox.Data.Contract\Notebox.Data.Contract.csproj", "{32794479-36C5-42F0-AE85-22C31D14B08E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteBox.Data.Contract", "Notebox.Data.Contract\NoteBox.Data.Contract.csproj", "{32794479-36C5-42F0-AE85-22C31D14B08E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteBox.Domain", "NoteBox.Domain\NoteBox.Domain.csproj", "{C950A09C-4F83-433D-BAD8-9E1DAD4628B0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteBox.Application", "NoteBox.Application\NoteBox.Application.csproj", "{B0573370-9D97-461A-8D4E-EE45AD1A06D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteBox.Application.Contract", "NoteBox.Application.Contract\NoteBox.Application.Contract.csproj", "{EEB0067F-403C-426A-8727-DF36790EEAA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteBox.Application.Contract", "NoteBox.Application.Contract\NoteBox.Application.Contract.csproj", "{EEB0067F-403C-426A-8727-DF36790EEAA7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteBox.Service", "NoteBox.Service\NoteBox.Service.csproj", "{CB12D43B-6D14-48FD-9AF8-0949C21C95CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteBox.DBModels", "Notebox.DBModels\NoteBox.DBModels.csproj", "{183140D5-5D88-4F91-8874-2FF5CAA934F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,18 +33,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1D1EFEC8-10FD-4D90-A78C-CF4B96633840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D1EFEC8-10FD-4D90-A78C-CF4B96633840}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D1EFEC8-10FD-4D90-A78C-CF4B96633840}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D1EFEC8-10FD-4D90-A78C-CF4B96633840}.Release|Any CPU.Build.0 = Release|Any CPU
 		{73A8DCF8-ACB8-47BE-BC4F-70382B321289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{73A8DCF8-ACB8-47BE-BC4F-70382B321289}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73A8DCF8-ACB8-47BE-BC4F-70382B321289}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73A8DCF8-ACB8-47BE-BC4F-70382B321289}.Release|Any CPU.Build.0 = Release|Any CPU
-		{183140D5-5D88-4F91-8874-2FF5CAA934F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{183140D5-5D88-4F91-8874-2FF5CAA934F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{183140D5-5D88-4F91-8874-2FF5CAA934F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{183140D5-5D88-4F91-8874-2FF5CAA934F4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{32794479-36C5-42F0-AE85-22C31D14B08E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{32794479-36C5-42F0-AE85-22C31D14B08E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32794479-36C5-42F0-AE85-22C31D14B08E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -61,18 +53,26 @@ Global
 		{EEB0067F-403C-426A-8727-DF36790EEAA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEB0067F-403C-426A-8727-DF36790EEAA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEB0067F-403C-426A-8727-DF36790EEAA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB12D43B-6D14-48FD-9AF8-0949C21C95CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB12D43B-6D14-48FD-9AF8-0949C21C95CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB12D43B-6D14-48FD-9AF8-0949C21C95CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB12D43B-6D14-48FD-9AF8-0949C21C95CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{183140D5-5D88-4F91-8874-2FF5CAA934F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{183140D5-5D88-4F91-8874-2FF5CAA934F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{183140D5-5D88-4F91-8874-2FF5CAA934F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{183140D5-5D88-4F91-8874-2FF5CAA934F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{1D1EFEC8-10FD-4D90-A78C-CF4B96633840} = {BFB2F1CE-B1AC-418E-A4E8-13E34B398ED9}
 		{73A8DCF8-ACB8-47BE-BC4F-70382B321289} = {64934678-E664-469B-9165-0BB245EDF28E}
-		{183140D5-5D88-4F91-8874-2FF5CAA934F4} = {64934678-E664-469B-9165-0BB245EDF28E}
 		{32794479-36C5-42F0-AE85-22C31D14B08E} = {64934678-E664-469B-9165-0BB245EDF28E}
 		{C950A09C-4F83-433D-BAD8-9E1DAD4628B0} = {19988385-B472-41C5-B28C-6A4F4CBD7186}
 		{B0573370-9D97-461A-8D4E-EE45AD1A06D6} = {EE505131-18C0-44E8-ACFC-D4333FFBB9B7}
 		{EEB0067F-403C-426A-8727-DF36790EEAA7} = {EE505131-18C0-44E8-ACFC-D4333FFBB9B7}
+		{CB12D43B-6D14-48FD-9AF8-0949C21C95CD} = {BFB2F1CE-B1AC-418E-A4E8-13E34B398ED9}
+		{183140D5-5D88-4F91-8874-2FF5CAA934F4} = {64934678-E664-469B-9165-0BB245EDF28E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B6C3CD03-81B3-4FE0-9D46-90DA640F3513}

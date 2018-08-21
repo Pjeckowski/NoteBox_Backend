@@ -1,6 +1,6 @@
-﻿using NoteBoxService.ActionResultProviders;
+﻿using NoteBox.Service.ActionResultProviders;
 
-namespace NoteBoxService
+namespace NoteBox.Service
 {
     public class ActionResultWrapper<T>
     {

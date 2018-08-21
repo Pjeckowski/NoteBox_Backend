@@ -117,14 +117,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Notebox.UserDBModel\Notebox.DBModels.csproj">
-      <Project>{183140D5-5D88-4F91-8874-2FF5CAA934F4}</Project>
-      <Name>Notebox.DBModels</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Notebox.DBModels\NoteBox.DBModels.csproj">
+      <Project>{183140D5-5D88-4F91-8874-2FF5CAA934F4}</Project>
+      <Name>NoteBox.DBModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

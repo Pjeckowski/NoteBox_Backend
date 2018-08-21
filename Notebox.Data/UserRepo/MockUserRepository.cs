@@ -5,7 +5,7 @@ using Notebox.Data.Contract;
 using Notebox.Data.Contract.UserData;
 using Notebox.DBModels.UserDataModel;
 
-namespace Notebox.Data.UserRepo
+namespace NoteBox.Data.UserRepo
 {
     public class MockUserRepository: IUserRepository
     {

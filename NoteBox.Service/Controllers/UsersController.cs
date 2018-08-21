@@ -1,12 +1,11 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NoteBox.Application.Contract;
 using NoteBox.Domain.UserDtos;
-using NoteBoxService.ActionResultProviders;
+using NoteBox.Service.ActionResultProviders;
 
-namespace NoteBoxService.Controllers
+namespace NoteBox.Service.Controllers
 {
     [Produces("application/json")]
     [Route("users")]
