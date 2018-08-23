@@ -1,4 +1,5 @@
-﻿using NoteBox.Service.ActionResultProviders;
+﻿using Microsoft.AspNetCore.Mvc;
+using NoteBox.Service.ActionResultProviders;
 
 namespace NoteBox.Service
 {
@@ -8,5 +9,10 @@ namespace NoteBox.Service
         public T ResultObject { get; set; }
         public bool IsFaulted { get; set; }
         public string FaultMessage { get; set; }
+
+        public IActionResult GetActionResult()
+        {
+            return IsFaulted ? ActionResultProvider.GetActionResult(FaultMessage) : ActionResultProvider.GetActionResult(ResultObject);
+        }
     }
 }

@@ -21,39 +21,38 @@ namespace NoteBox.Service.Controllers
             _majorMapper = majorMapper;
         }
 
-        // GET: api/<controller>
+        // GET: <controller>
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             var actionResultWrapper = await HandleException(async () => await _majorApplication.GetMajorsAsync());
-            return actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.ResultObject);
+            return actionResultWrapper.GetActionResult();
         }
 
-        // GET api/<controller>/5
+        // GET <controller>/5
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             var actionResultWrapper = await HandleException(async () => await _majorApplication.GetMajorByIdAsync(id));
-            return actionResultWrapper.IsFaulted?  actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.FaultMessage): 
-                actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.ResultObject);
+            return actionResultWrapper.GetActionResult();
         }
 
-        // POST api/<controller>
+        // POST <controller>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]MajorDto majorDto)
         {
             var actionResultWrapper = await HandleException(async () => await _majorApplication.AddMajorAsync(majorDto));
-            return actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.ResultObject);
+            return actionResultWrapper.GetActionResult();
         }
 
-        // PUT api/<controller>/5
+        // PUT <controller>/5
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, [FromBody]string value)
         {
             return Ok();
         }
 
-        // DELETE api/<controller>/5
+        // DELETE <controller>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

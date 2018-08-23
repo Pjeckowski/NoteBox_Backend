@@ -24,39 +24,39 @@ namespace NoteBox.Service.Controllers
 
         #region usersActions
             
-        // GET: api/User
+        // GET: Users
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery(Name="count"), ] int? count, [FromQuery(Name = "start")] int? start)
         {
             var actionResultWrapper = await HandleException(async () => await _userApplication.GetUsersAsync());
-            return actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.ResultObject);
+            return actionResultWrapper.GetActionResult();
         }
 
-        // GET: api/User/5
+        // GET: Users/5
         [HttpGet("{id}", Name = "Get")]
         public async Task<IActionResult> Get(int id)
         {
             var actionResultWrapper = await HandleException(async () => await _userApplication.GetUserByIdAsync(id));
-            return actionResultWrapper.IsFaulted ?  actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.FaultMessage) : actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.ResultObject);
+            return actionResultWrapper.GetActionResult();
         }
         
-        // POST: api/User
+        // POST: Users
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]UserWithPasswordDto userWithPasswordDto)
         {
             var actionResultWrapper = await HandleException(async () => await _userApplication.AddUserAsync(userWithPasswordDto));
-            return actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.ResultObject);
+            return actionResultWrapper.GetActionResult();
         }
         
         
-        // PUT: api/User/5
+        // PUT: Users/5
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody]string value)
         {
             return Ok();
         }
         
-        // DELETE: api/ApiWithActions/5
+        // DELETE: ApiWithActions/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -69,8 +69,7 @@ namespace NoteBox.Service.Controllers
         public async Task<IActionResult> GetUserMajors(int userId)
         {
             var actionResultWrapper = await HandleException(async () => await _majorApplication.GetUserMajors(userId));
-            return actionResultWrapper.IsFaulted? actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.FaultMessage):
-                actionResultWrapper.ActionResultProvider.GetActionResult(actionResultWrapper.ResultObject);
+            return actionResultWrapper.GetActionResult();
         }
 
         //why not just returning action result??
