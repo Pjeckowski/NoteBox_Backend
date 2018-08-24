@@ -17,5 +17,6 @@ namespace Notebox.DBModels.MajorDataModel
         public string School { get; set; }
         [Required]
         public int OwnerId { get; set; }
+        public string Description { get; set; }
     }
 }
