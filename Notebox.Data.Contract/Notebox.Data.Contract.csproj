@@ -111,6 +111,9 @@
     <Compile Include="MajorData\IMajorDataContext.cs" />
     <Compile Include="MajorData\IMajorDataContextFactory.cs" />
     <Compile Include="MajorData\IMajorRepository.cs" />
+    <Compile Include="SemesterData\ISemesterDataContext.cs" />
+    <Compile Include="SemesterData\ISemesterDataContextFactory.cs" />
+    <Compile Include="SemesterData\ISemesterRepository.cs" />
     <Compile Include="UserData\IUserDataContext.cs" />
     <Compile Include="UserData\IUserDataContextFactory.cs" />
     <Compile Include="UserData\IUserRepository.cs" />

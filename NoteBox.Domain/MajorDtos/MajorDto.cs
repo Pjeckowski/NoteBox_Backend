@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace NoteBox.Domain.MajorDtos
 {
@@ -17,7 +18,13 @@ namespace NoteBox.Domain.MajorDtos
         public string School { get; set; }
         [Required]
         public int OwnerId { get; set; }
-        public string Semesters { get; set; }
+        public List<MajorSemesterDto> Semesters { get; set; }
+    }
+
+    public class MajorSemesterDto
+    {
+        public int Id { get; set; }
+        public int SequenceId { get; set; }
     }
 
 }
