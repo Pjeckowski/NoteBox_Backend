@@ -9,7 +9,8 @@ using NoteBox.Service.ActionResultProviders;
 
 namespace NoteBox.Service.Controllers
 {
-    [Route("[controller]")]
+    [Produces("application/json")]
+    [Route("majors")]
     public class MajorsController : Controller
     {
         private readonly IMajorApplicationService _majorApplication;

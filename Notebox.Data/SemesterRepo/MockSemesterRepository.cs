@@ -2,16 +2,18 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Notebox.Data.Contract.MajorData;
+using Notebox.Data.Contract.SemesterData;
 using Notebox.DBModels.MajorDataModel;
+using Notebox.DBModels.SemesterDataModel;
 
 namespace Notebox.Data.MajorRepo
 {
-    public class MockMajorRepository: IMajorRepository
+    public class MockSemesterRepository: ISemesterRepository
     {
         private List<MajorDbModel> _majors;
         private int _id;
 
-        public MockMajorRepository()
+        public MockSemesterRepository()
         {
             _majors = new List<MajorDbModel>();
             for(int i = 1; i < 21; i++)
@@ -87,6 +89,36 @@ namespace Notebox.Data.MajorRepo
         {
             var removedMajor = _majors.SingleOrDefault(m => m.Id.Equals(id));
             _majors.Remove(removedMajor);
+        }
+
+        public Task<SemesterDbModel> CreateSemesterAsync(SemesterDbModel semester)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<List<SemesterDbModel>> ReadSemestersAsync(int? count = null, int? skip = null)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<List<SemesterDbModel>> ReadSemestersByMajorIdAsync(int majorId)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<SemesterDbModel> ReadSemesterAsync(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task UpdateSemesterAsync(SemesterDbModel major)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task DeleteSemesterAsync(int id)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

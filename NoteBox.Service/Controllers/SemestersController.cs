@@ -9,21 +9,21 @@ using NoteBox.Service.ActionResultProviders;
 namespace NoteBox.Service.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Semesters")]
+    [Route("semesters")]
     public class SemestersController : Controller
     {
         // GET: api/Semesters
         [HttpGet]
-        public Task<IActionResult> Get()
+        public async Task<IActionResult> Get()
         {
-            return Task.FromResult(Ok());
+            return Ok();
         }
 
         // GET: api/Semesters/5
-        [HttpGet("{id}", Name = "Get")]
-        public Task<IActionResult> Get(int id)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
         {
-            return "value";
+            return Ok();
         }
         
         // POST: api/Semesters

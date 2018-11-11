@@ -33,7 +33,7 @@ namespace NoteBox.Service.Controllers
         }
 
         // GET: Users/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             var actionResultWrapper = await HandleException(async () => await _userApplication.GetUserByIdAsync(id));
